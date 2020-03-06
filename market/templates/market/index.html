@@ -1,0 +1,13 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+    <div class="product">
+        {% for item in product %}
+            <h1>{{ item.name }}</h1>
+            <p>{{ item.price }}</p>
+            <p>{{ item.stock }}</p>
+            <a href="{% url 'updateProduct' item.id %}">Update</a>
+            <a href="{% url 'deleteProduct' item.id %}">Delete</a>
+        {% endfor %}    
+    </div>
+{% endblock content %}

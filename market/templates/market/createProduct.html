@@ -1,0 +1,15 @@
+{% extends 'market/base.html' %}
+
+{% block content %}
+    <div class="create_product">
+        <form method="POST">
+            {% csrf_token %}
+            <ul>
+                <li>Name: {{form.name}}</li>
+                <li>Price: {{form.price}}</li>
+                <li>Stock: {{form.stock}}</li>
+            </ul>
+            <input type="submit">
+        </form>
+    </div> 
+{% endblock content %}
